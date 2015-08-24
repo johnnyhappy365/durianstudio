@@ -1,3 +1,5 @@
+
+
 html
   // 强制设置全局rem使用
   font-size: $font-size-base!important
@@ -7,15 +9,22 @@ h1, h2
 h1
   margin-top: 2rem
   margin-bottom: 2rem
+  @include respond-to(handhelds)
+    margin-top: 2rem
+    margin-bottom: 1rem
 h2
   margin-top: 3rem
   margin-bottom: 2rem
+  @include respond-to(handhelds)
+    margin-bottom: 1rem
 ul
   padding: 0
   margin: 0
   list-style: none
 section
   padding: 4rem 0
+  @include respond-to(handhelds)
+    padding: 2rem 0
 
 // 设置ruby红色
 $text-color-red: #B74627
@@ -27,6 +36,43 @@ $text-color-red: #B74627
   font-size: $font-size-h6
   margin-left: 0.5em
 
+$carousel-height: 512px
+$carousel-height-xs: 256px
+$carousel-height-sm: 256px + 128px
 // 海报设置
+.carousel
+  height: $carousel-height
+  .item
+    height: $carousel-height
+    img
+      max-width: 100%
+      max-height: 400%
+      position: absolute
+      top: 0px
+      right: 0
+      bottom: 100px
+      left: 0
+      margin: auto 
+
+      @include respond-to(wide-screens) 
+        bottom: 300px
+      @include respond-to(handhelds)
+        max-width: 180%
+        left: -20px
+        top: 20px
+      @include respond-to(pad)
+        max-width: 200%
+        left: -200px
+
+    @include respond-to(handhelds)
+      height: $carousel-height-xs
+    @include respond-to(pad)
+      height: $carousel-height-sm
+
+  @include respond-to(handhelds)
+    height: $carousel-height-xs
+  @include respond-to(pad)
+    height: $carousel-height-sm
+
 .carousel-caption
   color: #EEE9CE

@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" /> 
+  <!--
+    Ask IE to behave like a modern browser
+    See: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible
+  --> 
+  <meta http-equiv="x-ua-compatible" content="ie=edge" /> 
+  <!--
+    Disables zooming on mobile devices.
+  --> 
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> 
+
   <title>Durianstudio</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,6 +22,7 @@
 <%= render partial: 'layouts/header' %>
 <%= render partial: 'layouts/bigpicture' %>
 <div class="container">
+
   <%= yield %>
 </div>
 
