@@ -1,0 +1,30 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome
+  p
+    span
+      color: $text-color-red
+      font-weight: 900
+
+  ul.if 
+    li
+      margin-bottom: 0.5rem
+    li
+      .fa       
+        margin-right: 0.5rem
+        line-height: 1.5
+        font-size: 1.1rem
+        -webkit-transition: all 0.2s ease-out
+        -o-transition: all 0.2s ease-out
+        -ms-transition: all 0.2s ease-out
+        -moz-transition: all 0.2s ease-out
+        transition: all 0.2s ease-out
+      &:hover .fa
+        color: $brand-primary
+        -webkit-transform: rotate(360deg)
+        -o-transform: rotate(5deg)
+        -ms-transform: rotate(5deg)
+        -moz-transform: rotate(5deg)
+        transform: rotate(360deg)
