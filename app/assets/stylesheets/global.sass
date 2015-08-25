@@ -1,10 +1,15 @@
-
-
+$text-color-light: #EEE9CE
+// 设置ruby红色
+$text-color-red: #B74627
+$carousel-height: 512px
+$carousel-height-xs: 256px
+$carousel-height-sm: 256px + 128px
+$products-bg: 'product-bg.png'
 html
   // 强制设置全局rem使用
   font-size: $font-size-base!important
   line-height: 1.5
-h1, h2
+h1, h2, h3
   color: $brand-primary
 h1
   margin-top: 2rem
@@ -22,12 +27,34 @@ ul
   margin: 0
   list-style: none
 section
-  padding: 4rem 0
+  padding-top: 4rem
+  padding-bottom: 10rem
   @include respond-to(handhelds)
     padding: 2rem 0
+.row
+  margin-left: 0
+  margin-right: 0
+.clearfix:after
+  content: ''
+  display: 'block'
+  clear: both
 
-// 设置ruby红色
-$text-color-red: #B74627
+// 定义折边阴影效果
+.shadow-3d:before, .shadow-3d:after
+  content: ""
+  display: block
+  position: absolute
+  top: 30px
+  left: 25px
+  right: 16px
+  bottom: 8px
+  z-index: -1
+  box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
+.shadow-3d:before
+  @include shadow-3d-transform(-10deg, -4deg)
+.shadow-3d:after
+  @include shadow-3d-transform(10deg, 4deg)
+
 
 // navbar补充设置
 .navbar-brand
@@ -36,9 +63,6 @@ $text-color-red: #B74627
   font-size: $font-size-h6
   margin-left: 0.5em
 
-$carousel-height: 512px
-$carousel-height-xs: 256px
-$carousel-height-sm: 256px + 128px
 // 海报设置
 .carousel
   height: $carousel-height
@@ -74,5 +98,6 @@ $carousel-height-sm: 256px + 128px
   @include respond-to(pad)
     height: $carousel-height-sm
 
-.carousel-caption
-  color: #EEE9CE
+.carousel-caption *
+  color: $text-color-light
+  

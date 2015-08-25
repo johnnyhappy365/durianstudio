@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .welcome
+  @extend .container
   p
     span
       color: $text-color-red
@@ -16,15 +17,42 @@
         margin-right: 0.5rem
         line-height: 1.5
         font-size: 1.1rem
-        -webkit-transition: all 0.2s ease-out
-        -o-transition: all 0.2s ease-out
-        -ms-transition: all 0.2s ease-out
-        -moz-transition: all 0.2s ease-out
-        transition: all 0.2s ease-out
+        @include transition-all(0.2s ease-out)
       &:hover .fa
         color: $brand-primary
-        -webkit-transform: rotate(360deg)
-        -o-transform: rotate(360deg)
-        -ms-transform: rotate(360deg)
-        -moz-transform: rotate(360deg)
-        transform: rotate(360deg)
+        @include rotate(360deg)
+
+.products
+  background-image: url($products-bg)
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  height: 36rem
+  z-index: 0
+  position: relative
+  .thumbnail
+    @extend .clearfix
+    @extend .shadow-3d
+    position: relative
+    padding-bottom: 2rem
+    @include transition-all(0.2s ease-out)
+    @include transform-style(preserve-3d)
+    .image-wrap
+      overflow: hidden
+    img
+      height: 12rem
+      max-width: 200%
+      position: relative
+      @include transition-all(1s ease-out 0.1s)
+    .label
+      float: left
+      margin-right: 0.2rem
+    &:hover 
+      @include rotate(-1deg)
+      @include transform-origin(top right)
+      img
+        @include translateX(-1.5rem)
+  @include respond-to(handhelds)
+    height: 86rem
+  @include respond-to(pad)
+    height: 56rem
