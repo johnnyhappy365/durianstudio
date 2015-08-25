@@ -1,5 +1,10 @@
-
-
+$text-color-light: #EEE9CE
+// 设置ruby红色
+$text-color-red: #B74627
+$carousel-height: 512px
+$carousel-height-xs: 256px
+$carousel-height-sm: 256px + 128px
+$products-bg: 'product-bg.png'
 html
   // 强制设置全局rem使用
   font-size: $font-size-base!important
@@ -33,7 +38,9 @@ section
   content: ''
   display: 'block'
   clear: both
-.shadow-3d:before
+
+// 定义折边阴影效果
+.shadow-3d:before, .shadow-3d:after
   content: ""
   display: block
   position: absolute
@@ -43,29 +50,11 @@ section
   bottom: 8px
   z-index: -1
   box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
-  -webkit-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
-  -o-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
-  -ms-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
-  -moz-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
-  transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+.shadow-3d:before
+  @include shadow-3d-transform(-10deg, -4deg)
 .shadow-3d:after
-  content: ""
-  display: block
-  position: absolute
-  top: 30px
-  left: 16px
-  right: 25px
-  bottom: 8px
-  z-index: -1
-  box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
-  -webkit-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
-  -o-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
-  -ms-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
-  -moz-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
-  transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
+  @include shadow-3d-transform(10deg, 4deg)
 
-// 设置ruby红色
-$text-color-red: #B74627
 
 // navbar补充设置
 .navbar-brand
@@ -74,9 +63,6 @@ $text-color-red: #B74627
   font-size: $font-size-h6
   margin-left: 0.5em
 
-$carousel-height: 512px
-$carousel-height-xs: 256px
-$carousel-height-sm: 256px + 128px
 // 海报设置
 .carousel
   height: $carousel-height
@@ -112,5 +98,6 @@ $carousel-height-sm: 256px + 128px
   @include respond-to(pad)
     height: $carousel-height-sm
 
-.carousel-caption
-  color: #EEE9CE
+.carousel-caption *
+  color: $text-color-light
+  

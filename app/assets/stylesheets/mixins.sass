@@ -1,0 +1,58 @@
+@mixin respond-to($media) 
+  @if $media == handhelds 
+    @media only screen and (max-width: $screen-xs) 
+      @content
+  
+  @else if $media == pad
+    @media only screen and (min-width: $screen-xs + 1) and (max-width: $screen-sm-min)
+      @content
+  
+  @else if $media == medium-screens 
+    @media only screen and (min-width: $screen-sm-min + 1) and (max-width: $screen-lg-desktop - 1)
+      @content
+  
+  @else if $media == wide-screens 
+    @media only screen and (min-width: $screen-lg-desktop)
+      @content
+  
+@mixin shadow-3d-transform($skew-deg,$rotate-deg)
+  -webkit-transform: translateZ(-1em) skew($skew-deg, 0) rotate($rotate-deg)
+  -o-transform: translateZ(-1em) skew($skew-deg, 0) rotate($rotate-deg)
+  -ms-transform: translateZ(-1em) skew($skew-deg, 0) rotate($rotate-deg)
+  -moz-transform: translateZ(-1em) skew($skew-deg, 0) rotate($rotate-deg)
+  transform: translateZ(-1em) skew($skew-deg, 0) rotate($rotate-deg)
+
+@mixin transition-all($para)
+  -webkit-transition: all $para
+  -o-transition: all $para
+  -ms-transition: all $para
+  -moz-transition: all $para
+  transition: all $para
+
+@mixin rotate($deg)
+  -webkit-transform: rotate($deg)
+  -o-transform: rotate($deg)
+  -ms-transform: rotate($deg)
+  -moz-transform: rotate($deg)
+  transform: rotate($deg)
+
+@mixin transform-style($style)
+  -webkit-transform-style: $style
+  -o-transform-style: $style
+  -ms-transform-style: $style
+  -moz-transform-style: $style
+  transform-style: $style
+
+@mixin transform-origin($origin)
+  -webkit-transform-origin: $origin
+  -o-transform-origin: $origin
+  -ms-transform-origin: $origin
+  -moz-transform-origin: $origin
+  transform-origin: $origin
+
+@mixin translateX($posX)
+  -o-transform: translateX($posX)
+  -webkit-transform: translateX($posX)
+  -ms-transform: translateX($posX)
+  -moz-transform: translateX($posX)
+  transform: translateX($posX)
