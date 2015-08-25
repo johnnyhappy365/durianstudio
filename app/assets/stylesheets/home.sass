@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .welcome
+  @extend .container
   p
     span
       color: $text-color-red
@@ -28,3 +29,61 @@
         -ms-transform: rotate(360deg)
         -moz-transform: rotate(360deg)
         transform: rotate(360deg)
+.products
+  background-image: url('product-bg.png')
+  background-attachment: fixed
+  background-size: cover
+  background-position: center
+  height: 36rem
+  z-index: 0
+  position: relative
+  .thumbnail
+    @extend .clearfix
+    @extend .shadow-3d
+    position: relative
+    padding-bottom: 2rem
+    -webkit-transition: all 0.2s ease-out
+    -o-transition: all 0.2s ease-out
+    -ms-transition: all 0.2s ease-out
+    -moz-transition: all 0.2s ease-out
+    transition: all 0.2s ease-out
+    -webkit-transform-style: preserve-3d
+    -o-transform-style: preserve-3d
+    -ms-transform-style: preserve-3d
+    -moz-transform-style: preserve-3d
+    transform-style: preserve-3d
+    .image-wrap
+      overflow: hidden
+    img
+      height: 12rem
+      max-width: 200%
+      position: relative
+      -webkit-transition: all 1s ease-out 0.1s
+      -o-transition: all 1s ease-out 0.1s
+      -ms-transition: all 1s ease-out 0.1s
+      -moz-transition: all 1s ease-out 0.1s
+      transition: all 1s ease-out 0.1s
+    .label
+      float: left
+      margin-right: 0.2rem
+    &:hover 
+      -webkit-transform: rotate(-1deg)
+      -o-transform: rotate(-1deg)
+      -ms-transform: rotate(-1deg)
+      -moz-transform: rotate(-1deg)
+      transform: rotate(-1deg)
+      -webkit-transform-origin: top right
+      -o-transform-origin: top right
+      -ms-transform-origin: top right
+      -moz-transform-origin: top right
+      transform-origin: top right
+      img
+        -o-transform: translateX(-1.5rem)
+        -webkit-transform: translateX(-1.5rem)
+        -ms-transform: translateX(-1.5rem)
+        -moz-transform: translateX(-1.5rem)
+        transform: translateX(-1.5rem)
+  @include respond-to(handhelds)
+    height: 86rem
+  @include respond-to(pad)
+    height: 56rem

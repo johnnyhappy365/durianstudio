@@ -4,7 +4,7 @@ html
   // 强制设置全局rem使用
   font-size: $font-size-base!important
   line-height: 1.5
-h1, h2
+h1, h2, h3
   color: $brand-primary
 h1
   margin-top: 2rem
@@ -22,9 +22,47 @@ ul
   margin: 0
   list-style: none
 section
-  padding: 4rem 0
+  padding-top: 4rem
+  padding-bottom: 10rem
   @include respond-to(handhelds)
     padding: 2rem 0
+.row
+  margin-left: 0
+  margin-right: 0
+.clearfix:after
+  content: ''
+  display: 'block'
+  clear: both
+.shadow-3d:before
+  content: ""
+  display: block
+  position: absolute
+  top: 30px
+  left: 25px
+  right: 16px
+  bottom: 8px
+  z-index: -1
+  box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
+  -webkit-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+  -o-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+  -ms-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+  -moz-transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+  transform: translateZ(-1em) skew(-10deg, 0) rotate(-4deg)
+.shadow-3d:after
+  content: ""
+  display: block
+  position: absolute
+  top: 30px
+  left: 16px
+  right: 25px
+  bottom: 8px
+  z-index: -1
+  box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
+  -webkit-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
+  -o-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
+  -ms-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
+  -moz-transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
+  transform: translateZ(-1em) skew(10deg, 0) rotate(4deg)
 
 // 设置ruby红色
 $text-color-red: #B74627
