@@ -56,3 +56,17 @@
   -ms-transform: translateX($posX)
   -moz-transform: translateX($posX)
   transform: translateX($posX)
+
+@mixin translate($posX, $posY)
+  -o-transform: translate($posX, $posY)
+  -webkit-transform: translate($posX, $posY)
+  -ms-transform: translate($posX, $posY)
+  -moz-transform: translate($posX, $posY)
+  transform: translate($posX, $posY)
+  
+@mixin translate_important($posX, $posY)
+  -o-transform: translate($posX, $posY) !important
+  -webkit-transform: translate($posX, $posY) !important
+  -ms-transform: translate($posX, $posY) !important
+  -moz-transform: translate($posX, $posY) !important
+  transform: translate($posX, $posY) !important

@@ -18,6 +18,7 @@
         line-height: 1.5
         font-size: 1.1rem
         @include transition-all(0.2s ease-out)
+        @include rotate(0deg)
       &:hover .fa
         color: $brand-primary
         @include rotate(360deg)
@@ -56,3 +57,24 @@
     height: 86rem
   @include respond-to(pad)
     height: 56rem
+.skills
+  .skill-1
+    @extend .fadeOut
+    @include translate(-50%, 0)
+    @include transition-all(0.5s ease-out 0.5s)
+  .skill-2
+    @extend .fadeOut
+    @include translate(50%, 0)
+    @include transition-all(0.5s ease-out 0.5s)
+  .bar-chart
+    @extend .fadeOut
+    margin-top: 4rem
+    height: 10rem
+    width: 100%
+    @include translate(0,50%)
+    @include transition-all(0.5s ease-out 0.5s)
+.fadeIn
+  @include translate_important(0,0)
+  opacity: 1!important
+.fadeOut
+  opacity: 0
