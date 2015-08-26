@@ -40,21 +40,20 @@ section
   clear: both
 
 // 定义折边阴影效果
-.shadow-3d:before, .shadow-3d:after
+.thumbnail-left, .thumbnail-right
   content: ""
   display: block
   position: absolute
   top: 30px
-  left: 25px
-  right: 16px
-  bottom: 8px
-  z-index: -1
+  left: 29px
+  right: 29px
+  bottom: 36px
+  // z-index: -1
   box-shadow: 0 0 20px 2px rgba(0,0,0,0.8)
-.shadow-3d:before
-  @include shadow-3d-transform(-10deg, -4deg)
-.shadow-3d:after
-  @include shadow-3d-transform(10deg, 4deg)
-
+.thumbnail-left
+  @include shadow-3d-transform(-10deg, -8deg)
+.thumbnail-right
+  @include shadow-3d-transform(10deg, 8deg)
 
 // navbar补充设置
 .navbar-brand
