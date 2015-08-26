@@ -29,11 +29,22 @@
   background-size: cover
   background-position: center
   height: 36rem
-  z-index: 0
+  // z-index: 0
   position: relative
+  .thumbnail-left, .thumbnail-right
+    @include transition-all(0.2s ease-out)
+  .thumbnail-wrap:hover 
+    .thumbnail-left, .thumbnail-wrap:hover .thumbnail-right
+      @include rotate(-2deg)
+      @include transform-origin(top right)
+    .thumbnail
+      @include rotate(-1deg)
+      @include transform-origin(top right)
+      img
+        @include translateX(-1.5rem)
   .thumbnail
     @extend .clearfix
-    @extend .shadow-3d
+    // @extend .shadow-3d
     position: relative
     padding-bottom: 2rem
     @include transition-all(0.2s ease-out)
@@ -48,11 +59,6 @@
     .label
       float: left
       margin-right: 0.2rem
-    &:hover 
-      @include rotate(-1deg)
-      @include transform-origin(top right)
-      img
-        @include translateX(-1.5rem)
   @include respond-to(handhelds)
     height: 86rem
   @include respond-to(pad)
