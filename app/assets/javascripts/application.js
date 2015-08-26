@@ -13,5 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.inview
+//= require Chart
 //= require turbolinks
 //= require_tree .
