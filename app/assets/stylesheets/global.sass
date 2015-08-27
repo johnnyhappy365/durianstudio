@@ -5,6 +5,8 @@ $carousel-height: 512px
 $carousel-height-xs: 256px
 $carousel-height-sm: 256px + 128px
 $products-bg: 'product-bg.png'
+// 设置sectionf进入视窗动画的延时时间
+$inview-delay-time: 0.6s
 html
   // 强制设置全局rem使用
   font-size: $font-size-base!important
@@ -28,7 +30,7 @@ ul
   list-style: none
 section
   padding-top: 4rem
-  padding-bottom: 10rem
+  padding-bottom: 6rem
   @include respond-to(handhelds)
     padding: 2rem 0
 .row
@@ -99,4 +101,9 @@ section
 
 .carousel-caption *
   color: $text-color-light
-  
+
+.fadeIn
+  @include translate_important(0,0)
+  opacity: 1!important
+.fadeOut
+  opacity: 0
