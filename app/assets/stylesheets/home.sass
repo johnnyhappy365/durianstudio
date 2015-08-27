@@ -29,6 +29,7 @@
   background-size: cover
   background-position: center
   height: 36rem
+  box-shadow: 0 0px 1px rgba(0,0,0,0.4)
   // z-index: 0
   position: relative
   .thumbnail-left, .thumbnail-right
@@ -63,24 +64,66 @@
     height: 86rem
   @include respond-to(pad)
     height: 56rem
+
+.services
+  @include translate(0,50%)
+  @include transition-all(0.5s ease-out $inview-delay-time)
+  .icons
+    margin-top: 6rem
+    .service-icon-wrap
+      text-align: center
+      position: relative
+      height: 10rem
+      img
+        position: absolute
+        left: 50%
+        width: 6rem
+        @include translate(-50%,0)
+      p
+        margin-top: 1rem
+        padding-top: 8rem
+
 .skills
+  .skill-title
+    @extend .fadeOut
+    @include translate(-50%, 0)
+    @include transition-all(0.5s ease-out $inview-delay-time * 1.5)
   .skill-1
     @extend .fadeOut
     @include translate(-50%, 0)
-    @include transition-all(0.5s ease-out 0.5s)
+    @include transition-all(0.5s ease-out $inview-delay-time * 1.5)
   .skill-2
     @extend .fadeOut
     @include translate(50%, 0)
-    @include transition-all(0.5s ease-out 0.5s)
+    @include transition-all(0.5s ease-out $inview-delay-time * 1.5)
   .bar-chart
     @extend .fadeOut
     margin-top: 4rem
     height: 10rem
     width: 100%
     @include translate(0,50%)
-    @include transition-all(0.5s ease-out 0.5s)
-.fadeIn
-  @include translate_important(0,0)
-  opacity: 1!important
-.fadeOut
-  opacity: 0
+    @include transition-all(0.5s ease-out $inview-delay-time * 1.5)
+.contacts
+  background: $gray
+  line-height: 1.8
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.4)
+  *
+    color: $text-color-light
+  li
+    @include respond-to(handhelds)
+      margin: 2rem 0
+    a
+      &:hover
+        color: lighten($text-color-light, 10%)
+      @include respond-to(handhelds)
+        text-align: center
+    .fa
+      margin-right: 0.5rem
+      @include respond-to(handhelds)
+        width: 100%
+        text-align: center
+        font-size: 4rem
+    
+
+
+

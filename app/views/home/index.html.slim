@@ -84,13 +84,58 @@ section.products
                 span.label.label-primary 新闻
               li
                 span.label.label-primary 解决方案
+section.services.fadeOut
+  .container
+    .row
+      h1 Our Services
+      p 我们提供基于HTML5/CSS3为核心的现代Web软件系统的定制开发，类别包括：个人博客，企业网站，电商网站，其它等。
+      p 通过定制化的设计和开发满足您对系统的不同需求。
+    .row.icons
+      .col-sm-12.col-md-4
+        .service-icon-wrap
+          = image_tag 'blog-icon.png'
+          p 个人博客
+      .col-sm-12.col-md-4
+        .service-icon-wrap
+          = image_tag 'chart-icon.png'
+          p 个人博客
+      .col-sm-12.col-md-4
+        .service-icon-wrap
+          = image_tag 'shop-icon.png'
+          p 个人博客
 section.skills
   .container
     .row
-      h1 Our Skills
+      h1.skill-title.fadeOut Our Skills
       h2.skill-1.fadeOut Rails 开发
       p.skill-1.fadeOut 熟练应用基于rails/ruby技术栈的web项目，包括: slim, sass, nokogiri, rest-client, sidekiq, devise, cancan, redcarpet, rspec, capybara, factory girl, postgreSQL, mySQL, mongdb，passenger
       h2.skill-2.fadeOut Web 前端开发
       p.skill-2.fadeOut 熟练应用基于html5, css3, javascript的前端技术，包括：bootstrap, sass, jquery, d3js, highcharts.
     .row
       canvas.bar-chart.fadeOut
+section.contacts
+  .container
+    .row
+      .col-sm-12.col-md-6
+        h2 Contacts
+        ul
+          li
+            = link_to '#' do
+              i.fa.fa-github
+              | https://github.com/johnnyhappy365
+          li
+            = link_to '#' do
+              i.fa.fa-google
+              | johnnyhappy365@gmail.com
+          li
+            = link_to '#' do
+              i.fa.fa-envelope
+              | zhangwy@vip.163.com
+          li
+            = link_to '#' do
+              i.fa.fa-twitter
+              | https://twitter.com/johnnyhappy365
+      .col-sm-12.col-md-6
+        h2 榴莲工作室
+        p 提供基于HTML5/CSS3的现代WEB系统定制开发, 支持响应式设计网站可自动适配PC，Pad, 手机不同尺寸。在前期减少原生APP开发成本的同时，为您提供优质的用户使用体验。
+        p 榴莲工作室，竭诚为您服务！

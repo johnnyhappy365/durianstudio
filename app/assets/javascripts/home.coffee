@@ -4,6 +4,11 @@
 
 
 jQuery ->
+  # 处理service inview事件
+  $('.services').on "inview", ->
+    $('.services').removeClass('fadeOut').addClass('fadeIn').off('inview')
+
+  # 处理 skills inview事件
   fillColor = "#EEE9CE"
   strokeColor = "#B69842"
   pointColor = "#006600"
@@ -26,8 +31,8 @@ jQuery ->
   showBarChart()
   $('.skills').on "inview", ->
     console.log("inview start")
-    # $this = $(this)
     $('.skill-1').removeClass('fadeOut').addClass('fadeIn').off('inview')
     $('.skill-2').removeClass('fadeOut').addClass('fadeIn').off('inview')
     $('.bar-chart').removeClass('fadeOut').addClass('fadeIn').off('inview')
+    $('.skill-title').removeClass('fadeOut').addClass('fadeIn').off('inview')
   #   setTimeout(showBarChart, 500)
